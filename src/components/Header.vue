@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="@/assets/logo.svg" alt="ticket logo" />
+    <a href="/"><img src="@/assets/logo.svg" alt="ticket logo" /></a>
 
     <nav>
       <ul class="nav__list">

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Header from "@/components/Header.vue";
 import MovieInfo from "@/components/MovieInfo.vue";
+import Similar from "@/components/Similar/Similar.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -8,7 +10,10 @@ import MovieInfo from "@/components/MovieInfo.vue";
 
   <main>
     <MovieInfo />
+    <Similar />
   </main>
+
+  <Footer />
 </template>
 
 <style scoped>
