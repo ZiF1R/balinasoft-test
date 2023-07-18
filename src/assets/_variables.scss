@@ -1,0 +1,24 @@
+$f-4: #602752;
+$f-4-dark: #392534;
+$primary: #FE9B0E;
+$secondary: #4A113C;
+$white: #ffffff;
+$white-mute: rgba(255, 255, 255, 0.70);
+
+$black: #181818;
+$black-soft: #222222;
+$black-mute: #282828;
+
+
+$radius-primary: 12px;
+$radius-secondary: 6px;
+$transition: .3s ease;
+$color-background: linear-gradient(180deg, #4A113C 0%, #261121 15.63%, #261121 100%);
+$color-text: $white;
+$color-text-mute: $white-mute;
+
+
+// adaptive containers
+$desktop: 1180px;
+$tablet: 834px;
+$mobile: 375px;
