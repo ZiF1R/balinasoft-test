@@ -135,6 +135,10 @@ h2 {
     border-radius: variables.$radius-primary;
     background: #392534;
     box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: lighten(#392534, 5%);
+    }
   }
 
   h2 {
@@ -148,16 +152,22 @@ h2 {
     font-weight: 400;
     color: variables.$color-text-mute;
   }
+}
 
-  .item__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .info__footer {
-    display: flex;
-    gap: variables.$gap;
-  }
+.info__footer {
+  display: flex;
+  gap: variables.$gap;
+}
+
+.item__rate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 </style>
