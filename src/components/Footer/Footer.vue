@@ -16,6 +16,7 @@
           </ul>
         </div>
       </div>
+      <SubscribeForm class="subscribe-form_adaptive" />
     </div>
     <div class="credentials">
       <div class="credentials__companies">
@@ -25,8 +26,10 @@
           <img :src="getImageSrc(company.image)" :alt="company.image">
         </a>
       </div>
-      <p><a href="">Политика конфиденциальности,  Договор публичной
-        оферты</a></p>
+      <p class="policy">
+        <a href="">Политика конфиденциальности</a>,
+        <a href="">Договор публичной оферты</a>
+      </p>
       <p>© 2023 ООО «Кино-инвест», г. Минск, ул. Матроскина, 23 УНП 101333338 тел: 8 017 217-11-77</p>
     </div>
   </footer>
@@ -144,6 +147,7 @@ footer {
 .footer__info {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .footer__quick-links {
@@ -198,5 +202,64 @@ footer {
   align-items: center;
   border-radius: 4px;
   background: #FFF;
+}
+
+.subscribe-form_adaptive {
+  display: none;
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .footer__info {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    max-width: 200px;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    form {
+      display: none;
+    }
+  }
+
+  .footer__quick-links {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+      color:  variables.$color-text;
+      font-weight: 700;
+    }
+  }
+
+  .credentials__companies {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .companies__company {
+    padding: 3.5px 6px;
+  }
+
+  .credentials {
+    p {
+      text-align: center;
+      max-width: 85%;
+    }
+  }
+
+  .subscribe-form_adaptive {
+    display: block;
+  }
 }
 </style>

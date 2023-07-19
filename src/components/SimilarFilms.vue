@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../assets/main.scss">
 <template>
   <section class="similar-films">
     <h2>Похожие по жанру</h2>
@@ -113,6 +114,7 @@ h2 {
   text-align: center;
   font-size: 1.2em;
   font-weight: 600;
+  position: relative;
 }
 
 .similar-films__list {
@@ -120,26 +122,6 @@ h2 {
   flex-wrap: wrap;
   gap: variables.$gap;
   margin-top: variables.$gap;
-
-  .list__item {
-    flex-grow: 1;
-    width: $film-width;
-  }
-
-  .list__item > a {
-    display: flex;
-    width: 100%;
-    padding: 15px;
-    gap: 12px;
-
-    border-radius: variables.$radius-primary;
-    background: #392534;
-    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.15);
-
-    &:hover {
-      background: lighten(#392534, 5%);
-    }
-  }
 
   h2 {
     text-align: left;
@@ -151,6 +133,26 @@ h2 {
     font-size: 1em;
     font-weight: 400;
     color: variables.$color-text-mute;
+  }
+}
+
+.list__item {
+  flex-grow: 1;
+  width: $film-width;
+}
+
+.list__item > a {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  gap: 12px;
+
+  border-radius: variables.$radius-primary;
+  background: #392534;
+  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background: lighten(#392534, 5%);
   }
 }
 
@@ -169,5 +171,42 @@ h2 {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+@media screen and (max-width: variables.$desktop) {
+  .similar-films > h2 {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100vw;
+      height: 100%;
+      background-color: #503449;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .similar-films {
+    h2 {
+      text-align: left;
+      background: none;
+      padding: 0;
+
+      &::after {
+        content: unset;
+      }
+    }
+  }
+
+  .list__item > a {
+    background: unset;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    padding: 0 0 20px;
+  }
 }
 </style>

@@ -4,17 +4,16 @@
 
     <nav>
       <ul class="nav__list">
-        <li class="list__item list__marker"></li>
         <li v-for="item in menu" :key="item.id" class="list__item"
             :class="{'item_active': activeItemId === item.id}"
             @click="setActiveItem($event, item)"
         >
           {{item.name}}
         </li>
+        <li class="list__item list__marker"></li>
       </ul>
     </nav>
 
-<!--    TODO: smooth transition for search opening -->
     <label class="header__search">
       <img src="@/assets/icons/search.svg" alt="search icon">
       <input type="text" placeholder="Search">
@@ -23,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, reactive, ref} from "vue";
+import {nextTick, onMounted, reactive, ref} from "vue";
 import {Menu, MenuItem} from "@/types/types";
 
 const menu = reactive<Menu>([
@@ -45,11 +44,14 @@ const menu = reactive<Menu>([
 ]);
 const activeItemId = ref<number>(menu[0].id);
 
-// onMounted(() => {
-//   setMarker(
-//     document.body.querySelector(".list__item")
-//   );
-// });
+onMounted(() => {
+  nextTick(() => {
+    const defaultMenuItem = document.querySelector(".list__item") as HTMLLIElement
+    if (defaultMenuItem) {
+      setMarker(defaultMenuItem);
+    }
+  });
+});
 
 function setMarker(target: EventTarget | null) {
   const marker = document.querySelector(".list__marker") as HTMLLIElement;
@@ -106,6 +108,7 @@ header {
   height: 100%;
   left: 0;
   top: 0;
+  z-index: -1;
 }
 
 .item_active {
@@ -129,6 +132,11 @@ header {
 @media screen and (max-width: variables.$tablet) {
   header {
     justify-content: center;
+
+    & > a img {
+      width: 120px;
+      height: 120px;
+    }
   }
 
   .nav__list {

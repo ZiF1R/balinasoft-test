@@ -1,0 +1,187 @@
+@use "variables";
+
+$rates-divider-gap: 50px;
+
+.movie__container {
+  display: flex;
+  gap: variables.$gap;
+  padding: 35px 0;
+}
+
+.movie__picture button {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.picture-player {
+  position: relative;
+}
+
+.play-button {
+  display: flex;
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.50);
+
+  cursor: pointer;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+h1 {
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+p, h3 {
+  color: variables.$color-text-mute;
+}
+
+.movie__tags {
+  display: flex;
+  gap: 5px;
+  padding: 10px 0;
+}
+
+.tags__tag {
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.50);
+  cursor: pointer;
+}
+
+.movie__other-rates {
+  display: flex;
+  position: relative;
+  padding: 10px 20px;
+  align-items: flex-start;
+  gap: 20px $rates-divider-gap;
+  margin: 5px 0 0;
+
+  width: fit-content;
+  border-radius: 12px;
+  border: 1px solid #695965;
+
+  h3 {
+    color: variables.$color-text;
+    font-weight: 600;
+    font-size: 1em;
+  }
+}
+
+.other-rates__rate {
+  display: flex;
+  position: relative;
+  gap: 40px;
+  align-items: center;
+
+  &::after {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.20);
+    position: absolute;
+    right: -25px;
+  }
+
+  &:last-child::after {
+    content: unset;
+  }
+
+  .rate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.movie__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 25px;
+}
+
+.info__divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.30);
+}
+
+h3 {
+  font-size: 0.85em;
+}
+
+.info__facts {
+  display: flex;
+  gap: 63px;
+}
+
+.actors__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 5px;
+
+  li::after {
+    content: ",";
+  }
+  li:last-child::after {
+    content: unset;
+  }
+}
+
+.movie__fragments {
+  display: flex;
+  gap: 10px;
+
+  li {
+    position: relative;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.movie__description {
+  p {
+    padding: 20px 0 10px;
+    color: variables.$color-text;
+  }
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  color: variables.$primary;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.info__additional {
+  h2 {
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
+}
