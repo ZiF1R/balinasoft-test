@@ -6,6 +6,7 @@ type MenuItem = {
 type Menu = Array<MenuItem>;
 
 interface Film {
+  id: number,
   title: string,
   description: string,
   restriction: number,
@@ -14,7 +15,6 @@ interface Film {
 }
 
 interface SimilarFilm extends Film {
-  id: number,
   type: string,
   link: string,
 }
