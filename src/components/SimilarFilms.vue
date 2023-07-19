@@ -208,5 +208,16 @@ h2 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
     padding: 0 0 20px;
   }
+
+  .info__footer {
+    gap: 5px;
+
+    & > * {
+      display: inline-block;
+      background: variables.$f-4-dark;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  }
 }
 </style>
